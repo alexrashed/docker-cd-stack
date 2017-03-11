@@ -11,7 +11,7 @@ Setup a complete continuous deployment configuration on a single docker host usi
 
 ## Setup / Config:
 
-1. 
+1. Configure and start the infrastructure: 
    ```
    cd infrastructure
    vim .env				# Configure your environment
@@ -33,7 +33,7 @@ Setup a complete continuous deployment configuration on a single docker host usi
 
 4. Configure Portainer
 
-5. 
+5. Configure and start the actual service and the watchtower:
    ```
    cd projects
    vim .env 				# Configure the watchtower / project
