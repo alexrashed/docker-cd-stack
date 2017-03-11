@@ -11,10 +11,11 @@ Setup a complete continuous deployment configuration on a single docker host usi
 
 ## Setup / Config:
 
-1. ```
+1. 
+   ```
    cd infrastructure
    vim .env				# Configure your environment
-   ./setup.sh 				# Creates the config files used by the compose
+   ./setup.sh 			# Creates the config files used by the compose
    docker-compose up -d
    ```
 
@@ -32,11 +33,13 @@ Setup a complete continuous deployment configuration on a single docker host usi
 
 4. Configure Portainer
 
-5. ```
+5. 
+   ```
    cd projects
    vim .env 				# Configure the watchtower / project
    docker-compose up -d	# Start the watchtower and service container to be watched
-   docker network connect projects_default infrastructure_nginx_1 # Add the reverse proxy to the new network
+   # Add the reverse proxy to the new network
+   docker network connect projects_default infrastructure_nginx_1 
    ```
 
 6. Commit a change to the SCM and enjoy the magic.
