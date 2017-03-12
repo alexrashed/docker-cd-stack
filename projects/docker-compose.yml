@@ -10,10 +10,7 @@ services:
   # Watchtower to upgrade if a new image is pushed to the registry
   watchtower:
     image: v2tec/watchtower:0.1.0
-    command: >
-      projects_${CD_IMAGE}_1
-      --interval 60s
-      --cleanup
+    command: --cleanup --interval 60 projects_${CD_IMAGE}_1
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
