@@ -100,7 +100,7 @@ services:
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
       - ./volumes/nginx-proxy/certs:/etc/nginx/certs
-      - ./config/nginx-proxy/portainer.git-init.org_location:/etc/nginx/vhost.d/portainer.git-init.org_location
+      - ./config/nginx-proxy/portainer.${DOMAINNAME}_location:/etc/nginx/vhost.d/portainer.${DOMAINNAME}_location
       - ./config/nginx-proxy/registry-proxy.conf:/etc/nginx/conf.d/registry-proxy.conf
       - /etc/nginx/vhost.d
       - /usr/share/nginx/html

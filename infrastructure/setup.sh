@@ -5,10 +5,10 @@ source .env
 
 # Configure NGiNX Reverse Proxy for Portainer
 mkdir -p ./config/nginx-proxy
-touch ./config/nginx-proxy/portainer.git-init.org_location
-echo "proxy_set_header Upgrade \$http_upgrade;" >> ./config/nginx-proxy/portainer.git-init.org_location
-echo "proxy_set_header Connection \"upgrade\";" >> ./config/nginx-proxy/portainer.git-init.org_location
-echo "proxy_set_header Connection \$http_connection;" >> ./config/nginx-proxy/portainer.git-init.org_location
+touch ./config/nginx-proxy/portainer.${DOMAINNAME}_location
+echo "proxy_set_header Upgrade \$http_upgrade;" >> ./config/nginx-proxy/portainer.${DOMAINNAME}_location
+echo "proxy_set_header Connection \"upgrade\";" >> ./config/nginx-proxy/portainer.${DOMAINNAME}_location
+echo "proxy_set_header Connection \$http_connection;" >> ./config/nginx-proxy/portainer.${DOMAINNAME}_location
 
 # Disable NGiNX Reverse Proxy request body size restriction
 touch ./config/nginx-proxy/registry-proxy.conf
